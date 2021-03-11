@@ -12,6 +12,7 @@ import FormButton from '../ui/FormButton';
 type TSProps = {
     property:any,
     scrollPosition:number,
+    static?:boolean,
 	theme:string
 }
 
@@ -30,8 +31,8 @@ const ContactForm:FunctionComponent<TSProps> = (props) => {
     }, [props.scrollPosition]);
 
 	return (
-		<ContactFormContainer scrollPosition={scrollPosition}>
-            <Title>
+		<ContactFormContainer static={props.static} scrollPosition={scrollPosition}>
+            <Title static={props.static}>
                 Get additional information about this property
             </Title>
             <FormInput svg={'<g id="YS3GzE.tif"><path d="M112.7,91.2c44.8,15.4,60.3,57.2,59.2,81.9H160.4c-.6-23.3-9.8-42.6-27.7-57.5A70.9,70.9,0,0,0,85.9,99.1a71.8,71.8,0,0,0-52.3,21.7c-14.3,14.3-21.5,31.9-21.8,52.3H0A86.2,86.2,0,0,1,59.3,91.4c-27.9-18.6-30-56.2-7.5-77.8A49.5,49.5,0,0,1,123,16.8C141.6,37.8,139.9,72.6,112.7,91.2ZM86.2,12a37.6,37.6,0,1,0,37.3,37.6A37.6,37.6,0,0,0,86.2,12Z"/></g>'} viewBox={'0 0 172 173.1'} label={'Full Name'} onChange={(e) => null} />
@@ -41,7 +42,7 @@ const ContactForm:FunctionComponent<TSProps> = (props) => {
             <FormCheckbox label={'I have served in the US military'} />
             <FormCheckbox label={'I want to be pre-approved by a lender'} />
             <FormButton label={'Email Agent'} />
-            <ContactFooter>
+            <ContactFooter static={props.static}>
                 By proceeding, you consent to receive calls and texts at 
                 the number you provided, including marketing by autodialer 
                 and prerecorded and artificial voice, and email, from 
@@ -56,16 +57,16 @@ const ContactForm:FunctionComponent<TSProps> = (props) => {
 
 // STYLED COMPONENTS //
 const ContactFormContainer = styled.div((props) => ({
-    width:340,
+    width:props.static ? 400 : 340,
     padding:15,
     overflow:'hidden',
     background:'#fff',
-    border:'1px solid #DEDFEA',
+    border:props.static ? 'none' : '1px solid #DEDFEA',
     borderRadius:10,
     boxSizing:'border-box',
-    position:'absolute',
+    position:props.static ? 'relative':'absolute',
     right:0,
-    top:67 + Math.max(0, (props.scrollPosition - 110)),
+    top:props.static ? 0 : 67 + Math.min(window.document.querySelector('#property')?.clientHeight - 775,Math.max(0, (props.scrollPosition - 110))),
     transition: 'top .65s ease-in-out'
 }));
 const Title = styled.div((props) => ({
@@ -74,7 +75,7 @@ const Title = styled.div((props) => ({
     fontWeight:600,
     textAlign:'center',
     padding:'0px 40px',
-    marginTop:15,
+    marginTop:props.static ? 0:15,
     marginBottom:20,
 }));
 const ContactFooter = styled.div((props) => ({
@@ -82,12 +83,12 @@ const ContactFooter = styled.div((props) => ({
     marginLeft:-15,
     boxSizing:'border-box',
     padding:15,
-    background:'#FCFDFF',
+    background:props.static ? '#fff':'#FCFDFF',
     marginBottom:-15,
     fontSize:11,
-    marginTop:20,
+    marginTop:props.static ? 5 : 20,
     color:props.theme.lightText,
-    borderTop:'1px solid #DEDFEA'
+    borderTop:props.static ? 'none':'1px solid #DEDFEA'
 }));
 
 // REDUX MAPPING //

@@ -20,7 +20,7 @@ const Property:FunctionComponent<TSProps> = (props) => {
     const [scrollPosition, setScrollPosition] = useState(false);
 
 	return (
-		<PropertyContainer>
+		<PropertyContainer id="property">
             <StickHeader scrollPosition={(position) => setScrollPosition(position)} />
             <CenteredContent>
                 <MainContent>

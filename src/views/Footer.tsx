@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 // COMPONENTS //
 import styled from 'styled-components';
+import RealtorInformation from '../components/footer/RealtorInformation';
 
 type TSProps = {
 	theme:string
@@ -13,15 +14,33 @@ type TSProps = {
 const Footer:FunctionComponent<TSProps> = (props) => {
 
 	return (
-		<Container>
-		
-		</Container>
+		<FooterContainer>
+            <CenteredContent>
+                <RealtorInformation/>
+            </CenteredContent>
+		</FooterContainer>
 	)
 }
 
 // STYLED COMPONENTS //
-const Container = styled.div({
-
+const FooterContainer = styled.footer({
+    width:'100%',
+    background:'#fff',
+    paddingTop:25,
+    marginTop:25,
+    paddingBottom:25,
+    borderTop:'1px solid #DEDFEA',
+    display:'flex',
+    alignItems:'flex-start',
+    justifyContent:'center',
+});
+const CenteredContent = styled.footer({
+    width:'calc(100% - 30px)',
+    maxWidth:1300,
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'flex-start',
+    justifyContent:'flex-start',
 });
 
 // REDUX MAPPING //
