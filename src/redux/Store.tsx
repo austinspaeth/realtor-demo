@@ -6,7 +6,7 @@ import { persistCombineReducers, persistStore } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
 
 const persistConfig = {
-    key: 'app::',
+    key: 'realtor::',
     storage,
     whitelist: ["theme"]
 };
