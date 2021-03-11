@@ -85,6 +85,8 @@ const Input = styled.div((props) => ({
     boxSizing:'border-box',
     padding:6,
     outline:0,
+    WebkitUserSelect: 'text',
+    userSelect: 'text',
     height:'100%',
     paddingTop:18,
     fontSize:15,
