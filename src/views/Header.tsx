@@ -10,7 +10,7 @@ type TSProps = {
 	theme:string
 }
 
-const Template:FunctionComponent<TSProps> = (props) => {
+const Header:FunctionComponent<TSProps> = (props) => {
 
 	return (
 		<Container>
@@ -37,4 +37,4 @@ const mapDispatchToProps = (dispatch) => {
 	};
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(Template);
+export default connect(mapStateToProps,mapDispatchToProps)(Header);
