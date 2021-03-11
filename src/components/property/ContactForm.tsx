@@ -59,6 +59,7 @@ const ContactForm:FunctionComponent<TSProps> = (props) => {
 const ContactFormContainer = styled.div((props) => ({
     width:props.static ? 400 : 340,
     padding:15,
+    marginRight: props.static && 15,
     overflow:'hidden',
     background:'#fff',
     border:props.static ? 'none' : '1px solid #DEDFEA',
@@ -67,7 +68,15 @@ const ContactFormContainer = styled.div((props) => ({
     position:props.static ? 'relative':'absolute',
     right:0,
     top:props.static ? 0 : 67 + Math.min(window.document.querySelector('#property')?.clientHeight - 775,Math.max(0, (props.scrollPosition - 110))),
-    transition: 'top .65s ease-in-out'
+    transition: 'top .65s ease-in-out',
+    '@media(max-width:960px)':{
+        display: props.static ? 'block':'none',
+    },
+    '@media(max-width:600px)':{
+        width:'100%',
+        padding:0,
+        overflow:'visible',
+    }
 }));
 const Title = styled.div((props) => ({
     fontSize:16,

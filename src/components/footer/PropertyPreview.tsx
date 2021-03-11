@@ -41,6 +41,7 @@ const PropertyPreviewContainer = styled.div((props) => ({
     width:200,
     height:200,
     marginRight:15,
+    marginBottom:15,
     background:'#fff',
     border:'1px solid #DEDFEA',
     borderRadius:10,

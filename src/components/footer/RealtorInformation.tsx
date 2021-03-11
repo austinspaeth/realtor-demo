@@ -60,7 +60,10 @@ const RealtorInformationContainer = styled.div((props) => ({
     width:'100%',
     display:'flex',
     justifyContent:'space-between',
-    alignItems:'center'
+    alignItems:'center',
+    '@media(max-width:870px)':{
+        flexDirection:'column-reverse',
+    }
 }));
 const LeftContent = styled.div((props) => ({
    display:'flex',
@@ -68,9 +71,14 @@ const LeftContent = styled.div((props) => ({
    alignItems:'flex-start',
    justifyContent:'center',
    width:'calc(100% - 360px)',
+   '@media(max-width:870px)':{
+        width:'100%',
+        marginTop:15,
+    }
 }));
 const RightContent = styled.div((props) => ({
    display:'flex',
+   minWidth:400,
 }));
 const PresentedBy = styled.div((props) => ({
    fontSize:14,
@@ -98,7 +106,11 @@ const AdditionalInfo = styled.div((props) => ({
     display:'flex',
     flexDirection:'column',
     alignItems:'flex-start',
-    justifyContent:'flex-start'
+    justifyContent:'flex-start',
+    '@media(max-width:870px)':{
+        width:'100%',
+        maxWidth:'100%'
+    }
 }));
 const InfoLine = styled.div((props) => ({
     width:'100%',
@@ -107,6 +119,9 @@ const InfoLine = styled.div((props) => ({
     display:'flex',
     justifyContent:'space-between',
     alignItems:'center',
+    '@media(max-width:870px)':{
+        width:'100%',
+    }
 }));
 const Key = styled.div((props) => ({
     fontSize:14,
@@ -123,12 +138,19 @@ const OtherPropertyTitle = styled.div((props) => ({
     marginBottom:5,
     fontWeight:600,
     marginTop:30,
+    '@media(max-width:870px)':{
+        display:'none',
+    }
 }));
 const OtherProperties = styled.div((props) => ({
     height:200,
     width:'100%',
     display:'flex',
     marginTop:15,
+    flexWrap:'wrap',
+    '@media(max-width:870px)':{
+        display:'none',
+    }
 }));
 
 // REDUX MAPPING //

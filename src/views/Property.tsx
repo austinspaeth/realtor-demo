@@ -59,6 +59,9 @@ const MainContent = styled.div((props) => ({
     alignItems:'flex-start',
     justifyContent:'flex-start',
     flexWrap:'nowrap',
+    '@media(max-width:960px)':{
+        width:'100%',
+    }
 }));
 
 // REDUX MAPPING //

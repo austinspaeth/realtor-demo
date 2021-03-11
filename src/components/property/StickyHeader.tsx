@@ -112,18 +112,27 @@ const Divider = styled.div((props) => ({
     background:'#DEDFEA',
     marginLeft:10,
     marginRight:10,
+    '@media(max-width:600px)':{
+        display:'none',
+    }
 }));
 const HomeAvatar = styled.img((props) => ({
     height:27,
     width:27,
     borderRadius:45,
-    background:props.theme.lightText
+    background:props.theme.lightText,
+    '@media(max-width:600px)':{
+        display:'none'
+    }
 }));
 const Address = styled.div((props) => ({
     fontSize:14,
     fontWeight:600,
     color:props.theme.darkText,
     marginLeft:10,
+    '@media(max-width:600px)':{
+        display:'none',
+    }
 }));
 const Share = styled.div((props) => ({
     fontSize:13,
@@ -139,6 +148,9 @@ const Share = styled.div((props) => ({
         '> *':{
             fill:props.theme.brand
         }
+    },
+    '@media(max-width:600px)':{
+        fontSize:0,
     }
 }));
 const Save = styled.div((props) => ({
@@ -156,6 +168,9 @@ const Save = styled.div((props) => ({
         '> *':{
             fill:props.theme.brand
         }
+    },
+    '@media(max-width:600px)':{
+        fontSize:0,
     }
 }));
 const Icon = styled.svg((props) => ({

@@ -98,6 +98,9 @@ const PropertySummaryContainer = styled.div((props) => ({
     display:'flex',
     justifyContent:'space-between',
     alignItems:'flex-start',
+    '@media(max-width:600px)':{
+        flexDirection:'column',
+    }
 }));
 const Divider = styled.div((props) => ({
     width:'100%',
@@ -110,6 +113,11 @@ const Row = styled.div((props) => ({
     display:'flex',
     alignItems:'flex-start',
     justifyContent:'center',
+    '@media(max-width:600px)':{
+        flexDirection:'column',
+        width:'100%',
+        paddingTop:20,
+    }
 }));
 const Column = styled.div((props) => ({
     width:'calc(33% - 1px)',
@@ -124,6 +132,13 @@ const Column = styled.div((props) => ({
     ':last-child':{
         paddingRight:0,
         borderRight:'none',
+    },
+    '@media(max-width:600px)':{
+        width:'100%',
+        borderRight:'none',
+        paddingLeft:0,
+        paddingRight:0,
+        paddingTop:0,
     }
 }));
 const InfoLine = styled.div((props) => ({
@@ -147,12 +162,18 @@ const LeftContent = styled.div((props) => ({
     flexDirection:'column',
     justifyContent:'flex-start',
     alignItems:'flex-start',
+    '@media(max-width:600px)':{
+        marginBottom:15,
+    }
 }));
 const RightContent = styled.div((props) => ({
     display:'flex',
     flexDirection:'column',
     alignItems:'flex-end',
-    justifyContent:'flex-start'
+    justifyContent:'flex-start',
+    '@media(max-width:600px)':{
+        width:'100%',
+    }
 }));
 const ExtraInfoLine = styled.div((props) => ({
     display:'flex',
@@ -175,6 +196,10 @@ const Strong = styled.div((props) => ({
 const GoogleMap = styled.img((props) => ({
     height:90,
     borderRadius:10,
+    '@media(max-width:600px)':{
+        width:'100%',
+        height:'initial',
+    }
 }));
 const Pricing = styled.div((props) => ({
     display:'flex',

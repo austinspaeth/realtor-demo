@@ -34,6 +34,9 @@ const NavigationContainer = styled.div({
     alignItems:'center',
     height:'100%',
     marginLeft:8,
+    '@media(max-width:1000px)':{
+        display:'none',
+    }
 });
 
 // REDUX MAPPING //
