@@ -9,6 +9,7 @@ import StickHeader from '../components/property/StickyHeader';
 import ContactForm from '../components/property/ContactForm';
 import ImageExplorer from '../components/property/ImageExplorer';
 import PropertySummary from '../components/property/PropertySummary';
+import PropertyDetails from '../components/property/PropertyDetails';
 
 type TSProps = {
 	theme:string
@@ -25,6 +26,7 @@ const Property:FunctionComponent<TSProps> = (props) => {
                 <MainContent>
                     <ImageExplorer />
                     <PropertySummary />
+                    <PropertyDetails />
                 </MainContent>
                 <ContactForm scrollPosition={scrollPosition} />
             </CenteredContent>
