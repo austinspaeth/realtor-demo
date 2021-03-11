@@ -66,6 +66,7 @@ const IconHolder = styled.div((props) => ({
 const Icon = styled.svg((props) => ({
     maxHeight:24,
     maxWidth:20,
+    width:'100%',
     fill: props.theme.darkText
 }));
 const Label = styled.div((props) => ({
