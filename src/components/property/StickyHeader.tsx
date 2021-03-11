@@ -64,7 +64,7 @@ const StickyHeader:FunctionComponent<TSProps> = (props) => {
 // STYLED COMPONENTS //
 const StickyHeaderContainer = styled.div((props) => ({
     position: 'fixed',
-    top:Math.max(60 - props.scrollPosition, 0),
+    top:Math.min(60,Math.max(60 - props.scrollPosition, 0)),
     width:'100%',
     height:45,
     boxSizing:'border-box',
@@ -74,6 +74,7 @@ const StickyHeaderContainer = styled.div((props) => ({
     justifyContent:'center',
     zIndex:5,
     alignItems:'center',
+    pointerEvents:'none',
     transition: 'background .2s ease-in-out, border .2s ease-in-out',
 }));
 const CenteredContent = styled.div((props) => ({
@@ -98,6 +99,7 @@ const Back = styled.svg((props) => ({
     height:14,
     paddingTop:5,
     paddingBottom:5,
+    pointerEvents:'all',
     fill: props.theme.darkText,
     stroke:1,
     cursor:'pointer',
@@ -140,6 +142,7 @@ const Share = styled.div((props) => ({
     display:'flex',
     alignItems:'center',
     justifyContent:'flex-end',
+    pointerEvents:'all',
     color:props.theme.darkText,
     cursor:'pointer',
     transition:'color .2s ease-in-out',
@@ -158,6 +161,7 @@ const Save = styled.div((props) => ({
     fontWeight:600,
     display:'flex',
     alignItems:'center',
+    pointerEvents:'all',
     justifyContent:'flex-end',
     color:props.theme.darkText,
     marginLeft:12,
@@ -185,9 +189,10 @@ const Contact = styled.div((props) => ({
     background:props.theme.brand,
     fontWeight:600,
     display:'flex',
+    pointerEvents:'all',
     alignItems:'center',
     justifyContent:'center',
-    marginLeft:12,
+    marginLeft:props.scrollPosition > 60 ? 12 : 0,
     borderRadius:45,
     height:32,
     boxSizing:'border-box',

@@ -60,6 +60,7 @@ const ContactFormContainer = styled.div((props) => ({
     width:props.static ? 400 : 340,
     padding:15,
     marginRight: props.static && 15,
+    marginLeft: props.static && 15,
     overflow:'hidden',
     background:'#fff',
     border:props.static ? 'none' : '1px solid #DEDFEA',
