@@ -44,6 +44,7 @@ const Label = styled.div((props) => ({
     color: props.theme.lightText,
     position:'absolute',
     left:38,
+    pointerEvents:'none',
     display: props.text && 'none',
 }));
 const Input = styled.div((props) => ({
@@ -78,6 +79,7 @@ const Input = styled.div((props) => ({
 const Icon = styled.svg((props) => ({
     height:19,
     width:19,
+    pointerEvents:'none',
     position:'absolute',
     left:12,
     fill: props.theme.lightText

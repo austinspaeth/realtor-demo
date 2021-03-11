@@ -100,6 +100,7 @@ const PropertySummaryContainer = styled.div((props) => ({
     alignItems:'flex-start',
     '@media(max-width:600px)':{
         flexDirection:'column',
+        marginTop:10,
     }
 }));
 const Divider = styled.div((props) => ({
@@ -209,6 +210,9 @@ const Price = styled.div((props) => ({
     fontSize:38,
     color:props.theme.darkText,
     fontWeight:900,
+    '@media(max-width:600px)':{
+        fontSize:32,
+    }
 }));
 const Estimate = styled.div((props) => ({
     display:'flex',
@@ -218,6 +222,9 @@ const Estimate = styled.div((props) => ({
     justifyContent:'center',
     fontSize:11,
     color:props.theme.lightText,
+    '@media(max-width:600px)':{
+        fontSize:10,
+    }
 }));
 const Span = styled.div((props) => ({
     fontSize:16,
@@ -225,6 +232,9 @@ const Span = styled.div((props) => ({
     fontWeight:600,
     borderBottom:'1px solid',
     marginTop:-2,
+    '@media(max-width:600px)':{
+        fontSize:14,
+    }
 }));
 const PropertyFacts = styled.div((props) => ({
     display:'flex',
@@ -247,6 +257,10 @@ const Address = styled.div((props) => ({
     fontWeight:600,
     color:props.theme.darkText,
     marginRight:5,
+    '@media(max-width:600px)':{
+        marginTop:4,
+        fontSize:16,
+    }
 }));
 
 // REDUX MAPPING //

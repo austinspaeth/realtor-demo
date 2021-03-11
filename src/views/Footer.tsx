@@ -33,6 +33,9 @@ const FooterContainer = styled.footer({
     display:'flex',
     alignItems:'flex-start',
     justifyContent:'center',
+    '@media(max-width:600px)':{
+        marginTop:0,
+    }
 });
 const CenteredContent = styled.footer({
     width:'calc(100% - 30px)',

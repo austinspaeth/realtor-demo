@@ -37,6 +37,9 @@ const PropertyDetails:FunctionComponent<TSProps> = (props) => {
 const PropertyDetailsContainer = styled.div((props) => ({
     width:'100%',
     marginTop:25,
+    '@media(max-width:600px)':{
+        marginTop:5,
+    }
 }));
 const Tab = styled.div((props) => ({
     width:'100%',
@@ -45,7 +48,16 @@ const Tab = styled.div((props) => ({
     display:'flex',
     justifyContent:'space-between',
     alignItems:'center',
-    borderTop:'1px solid #DEDFEA'
+    borderTop:'1px solid #DEDFEA',
+    cursor:'pointer',
+    ':hover':{
+        '> *':{
+            color:props.theme.brand,
+            '> *':{
+                fill:props.theme.brand,
+            }
+        }
+    }
 }));
 const Title = styled.div((props) => ({
     display:'flex',
@@ -54,15 +66,18 @@ const Title = styled.div((props) => ({
     color:props.theme.darkText,
     fontSize:16,
     fontWeight:600,
+    transition:'color .2s ease-in-out',
 }));
 const Icon = styled.svg((props) => ({
     height:30,
     fill:props.theme.darkText,
     marginRight:10,
+    transition:'fill .2s ease-in-out',
 }));
 const Carat = styled.svg((props) => ({
     height:8,
-    fill:props.theme.darkText
+    fill:props.theme.darkText,
+    transition:'fill .2s ease-in-out',
 }));
 
 // REDUX MAPPING //
