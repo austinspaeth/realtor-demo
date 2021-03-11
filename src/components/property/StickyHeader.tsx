@@ -100,6 +100,11 @@ const Back = styled.svg((props) => ({
     paddingBottom:5,
     fill: props.theme.darkText,
     stroke:1,
+    cursor:'pointer',
+    transition:'fill .2s ease-in-out',
+    ':hover':{
+        fill:props.theme.brand
+    }
 }));
 const Divider = styled.div((props) => ({
     height:23,
@@ -127,6 +132,14 @@ const Share = styled.div((props) => ({
     alignItems:'center',
     justifyContent:'flex-end',
     color:props.theme.darkText,
+    cursor:'pointer',
+    transition:'color .2s ease-in-out',
+    ':hover':{
+        color:props.theme.brand,
+        '> *':{
+            fill:props.theme.brand
+        }
+    }
 }));
 const Save = styled.div((props) => ({
     fontSize:13,
@@ -136,11 +149,20 @@ const Save = styled.div((props) => ({
     justifyContent:'flex-end',
     color:props.theme.darkText,
     marginLeft:12,
+    cursor:'pointer',
+    transition:'color .2s ease-in-out',
+    ':hover':{
+        color:props.theme.brand,
+        '> *':{
+            fill:props.theme.brand
+        }
+    }
 }));
 const Icon = styled.svg((props) => ({
     height:18,
     fill:props.theme.darkText,
     marginRight:6,
+    transition:'fill .2s ease-in-out',
 }));
 const Contact = styled.div((props) => ({
     fontSize:13,
@@ -154,10 +176,16 @@ const Contact = styled.div((props) => ({
     borderRadius:45,
     height:32,
     boxSizing:'border-box',
+    border:props.scrollPosition > 60 ? '2px solid' : '0px none',
+    borderColor:props.theme.brand,
     overflow:'hidden',
+    cursor:'pointer',
     whiteSpace:'nowrap',
     width: props.scrollPosition > 60 ? 115:0,
-    transition:'all .3s cubic-bezier(.24,.67,.56,.99)',
+    transition:'all .3s cubic-bezier(.24,.67,.56,.99), background .2s ease-in-out',
+    ':hover':{
+        background:'#ff282f'
+    }
 }));
 
 // REDUX MAPPING //

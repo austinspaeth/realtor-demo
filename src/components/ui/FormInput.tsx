@@ -89,7 +89,6 @@ const Input = styled.div((props) => ({
     fontSize:15,
     fontWeight:600,
     color:props.theme.darkText,
-    zIndex:3,
     top: 0,
     position:'absolute',
     ':focus':{

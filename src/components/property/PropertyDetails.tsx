@@ -21,7 +21,7 @@ const PropertyDetails:FunctionComponent<TSProps> = (props) => {
 	return (
 		<PropertyDetailsContainer>
             {propertyTabs.map((tab) => 
-                <Tab>
+                <Tab key={tab.label}>
                     <Title>
                         <Icon viewBox={tab.viewBox} dangerouslySetInnerHTML={{__html: tab.svg}} />
                         {tab.label}

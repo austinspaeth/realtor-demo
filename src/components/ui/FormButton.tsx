@@ -32,7 +32,14 @@ const FormButtonContainer = styled.div((props) => ({
     borderRadius:45,
     marginTop:30,
     cursor:'pointer',
-    background:props.theme.brand
+    background:props.theme.brand,
+    boxSizing:'border-box',
+    border:'3px solid',
+    borderColor: props.theme.brand,
+    transition:'background .2s ease-in-out',
+    ':hover':{
+        background:'#ff282f'
+    }
 }));
 
 // REDUX MAPPING //
