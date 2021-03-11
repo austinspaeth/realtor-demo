@@ -20,9 +20,9 @@ const Template:FunctionComponent<TSProps> = (props) => {
 }
 
 // STYLED COMPONENTS //
-const Container = styled.div({
+const Container = styled.div((props) => ({
 
-});
+}));
 
 // REDUX MAPPING //
 const mapStateToProps = (state) => {

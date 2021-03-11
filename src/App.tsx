@@ -2,7 +2,7 @@ import React, {FunctionComponent, useState, useEffect} from "react";
 
 // REDUX //
 import { connect } from 'react-redux';
-import {  } from './redux/Actions';
+import { setView } from './redux/Actions';
 
 // VIEWS //
 import Header from './views/Header';
@@ -16,11 +16,19 @@ import { ThemeProvider } from 'styled-components';
 import './assets/css/styles.css';
 
 type TSProps = {
-    theme: any
-	view:string
+    passedView: string,
+    setView: Function,
+    theme: any,
+	view: string,
 };
 
 const App:FunctionComponent<TSProps> = (props) => {
+
+    useEffect(() => {
+        if(props.view !== props.passedView){
+            props.setView(props.passedView);
+        }
+    }, [props.passedView]);
 
     switch(props.view){
         default:
@@ -37,12 +45,15 @@ const App:FunctionComponent<TSProps> = (props) => {
 // REDUX MAPPINGS //
 const mapStateToProps = (state) => {
 	return {
-        theme: state.theme
+        theme: state.theme,
+        view: state.view
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
-	return {};
+	return {
+        setView: (view) => dispatch(setView(view))
+    };
 };
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);

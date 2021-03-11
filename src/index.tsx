@@ -19,7 +19,7 @@ ReactDOM.render(
 		 <PersistGate loading={null} persistor={persistor}>
 			<BrowserRouter>
 				<Switch>
-                    <Route path="/" render={() => (<App view={'app'} />) } />
+                    <Route path="/" render={() => (<App passedView={'buy'} />) } />
 				</Switch>
 			</BrowserRouter>
 		</PersistGate>

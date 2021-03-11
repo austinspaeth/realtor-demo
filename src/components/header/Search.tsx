@@ -32,7 +32,7 @@ const SearchContainer = styled.div({
     height:40,
 });
 const Label = styled.div((props) => ({
-    fontSize:14,
+    fontSize:13,
     color: props.theme.lightText,
     position:'absolute',
     left:38,
