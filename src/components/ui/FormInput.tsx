@@ -33,7 +33,7 @@ const FormInput:FunctionComponent<TSProps> = (props) => {
                     <Icon viewBox={props.viewBox} dangerouslySetInnerHTML={{ __html: props.svg}} />
                 </IconHolder>
             }
-            <Input icon={props.svg} contentEditable={true} onInput={(e) => setText(e.target.textContent)}>{props.initial}</Input>
+            <Input icon={props.svg} contentEditable={true} onInput={(e) => setText(e.target.textContent)} dangerouslySetInnerHTML={{__html: props.initial ? props.initial : ''}} />
             <Label text={text} icon={props.svg}>
                 {props.label}
             </Label>
@@ -70,7 +70,7 @@ const Icon = styled.svg((props) => ({
 }));
 const Label = styled.div((props) => ({
     position:'absolute',
-    left:props.icon ? 44: 6,
+    left:props.icon ? 44: 11,
     fontSize:props.text.length > 0 ? 9:15,
     pointerEvents:'none',
     color:props.text.length > 0 ? props.theme.lightText:props.theme.darkText,
@@ -79,8 +79,8 @@ const Label = styled.div((props) => ({
     transition: 'all .2s ease-in-out',
 }));
 const Input = styled.div((props) => ({
-    width:props.icon ? 'calc(100% - 38px)':'100%',
-    left:props.icon ? 38:0,
+    width:props.icon ? 'calc(100% - 38px)':'calc(100% - 10px)',
+    left:props.icon ? 38:5,
     boxSizing:'border-box',
     padding:6,
     outline:0,
@@ -90,7 +90,7 @@ const Input = styled.div((props) => ({
     fontWeight:600,
     color:props.theme.darkText,
     zIndex:3,
-    top:0,
+    top: 0,
     position:'absolute',
     ':focus':{
         '~ *':{
