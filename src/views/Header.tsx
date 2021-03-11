@@ -23,7 +23,10 @@ const Header:FunctionComponent<TSProps> = (props) => {
                     <Navigation  />
                 </LeftContent>
                 <RightContent>
-
+                    <RightLink>Log In</RightLink>
+                    <RightLink>Sign Up</RightLink>
+                    <Divider/>
+                    <Advertise>Advertise</Advertise>
                 </RightContent>
             </CenteredContent>
 		</HeaderContainer>
@@ -58,6 +61,43 @@ const RightContent = styled.div((props) => ({
     display:'flex',
     justifyContent:'flex-end',
     alignItems:'center',
+}));
+const RightLink = styled.div((props) => ({
+    color: props.theme.darkText,
+    fontSize:13,
+    fontWeight:600,
+    boxSizing:'border-box',
+    display:'flex',
+    alignItems:'center',
+    marginRight:12,
+    textTransform:'capitalize',
+    justifyContent:'flex-start',
+    cursor:'pointer',
+    transition:'all .2s ease-in-out',
+    ':hover':{
+        color:props.theme.brand
+    }
+}));
+const Divider = styled.div((props) => ({
+    height:24,
+    width:1,
+    background:'#DEDFEA'
+}));
+const Advertise = styled.div((props) => ({
+    color: props.theme.darkText,
+    fontSize:13,
+    fontWeight:600,
+    boxSizing:'border-box',
+    display:'flex',
+    alignItems:'center',
+    marginLeft:12,
+    textTransform:'capitalize',
+    justifyContent:'flex-start',
+    cursor:'pointer',
+    transition:'all .2s ease-in-out',
+    ':hover':{
+        color:props.theme.brand
+    }
 }));
 const Logo = styled.svg((props) => ({
     height:23
