@@ -31,6 +31,9 @@ const ImageExplorerContainer = styled.div((props) => ({
     flexDirection:'column',
     alignItems:'flex-start',
     justifyContent:'flex-start',
+    '@media(max-width:600px)':{
+        marginTop:0,
+    }
 }));
 const PresentedBy = styled.div((props) => ({
     display:'flex',

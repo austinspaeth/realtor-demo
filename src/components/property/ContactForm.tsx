@@ -72,7 +72,7 @@ const ContactFormContainer = styled.div((props) => ({
         display: props.static ? 'block':'none',
     },
     '@media(max-width:600px)':{
-        width:'calc(100% - 30px)',
+        width:'100%',
         padding:0,
         overflow:'visible',
     }

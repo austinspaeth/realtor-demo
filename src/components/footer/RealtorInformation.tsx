@@ -79,6 +79,9 @@ const LeftContent = styled.div((props) => ({
 const RightContent = styled.div((props) => ({
    display:'flex',
    minWidth:400,
+   '@media(max-width:600px)':{
+       minWidth:'100%',
+   }
 }));
 const PresentedBy = styled.div((props) => ({
    fontSize:14,
