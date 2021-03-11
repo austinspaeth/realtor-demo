@@ -1,0 +1,34 @@
+{
+    "realtor":{
+        "name":"Tiana Javier",
+        "company":"eXp Realty, LLC",
+        "phone":"(541) 331-1209",
+        "location": "Salem, OR",
+        "dataSource":"Willamette",
+        "sourcePropertyId":774551,
+        "copyright":"2021 Willamette Valley MLS. All rights reserved."
+    },
+    "property":{
+        "avatar":"https://s3-us-west-2.amazonaws.com/austinspaeth.com/storage/house-avatar.jpg",
+        "image":"https://s3-us-west-2.amazonaws.com/austinspaeth.com/storage/house.jpg",
+        "address":"2356 Broadway St NW",
+        "city":"Albany",
+        "state":"Oregon",
+        "price":650000,
+        "beds":5,
+        "baths":3.5,
+        "sqft":3836,
+        "lot": 8712,
+        "noise":"medium",
+        "floodFactor":1,
+        "type":"Single Family Home",
+        "year":"2003",
+        "lastSold":{
+            "price":"$557k",
+            "year":2018
+        },
+        "pricePerSqFt":169,
+        "daysOnRealtor":1,
+        "garage":3
+    }
+}

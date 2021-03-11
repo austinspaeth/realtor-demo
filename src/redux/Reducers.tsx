@@ -1,5 +1,14 @@
-import { SET_THEME, SET_VIEW } from './Constants';
+import { SET_THEME, SET_VIEW, SET_PROPERTY } from './Constants';
 import { defaultStyles } from '../assets/mockData/defaultStyles';
+
+const property = (state = null, action) => {
+	switch (action.type) {
+		case SET_PROPERTY:
+			return action.property;
+		default:
+			return state;
+	}
+};
 
 const theme = (state = defaultStyles, action) => {
 	switch (action.type) {
@@ -21,6 +30,7 @@ const view = (state = null, action) => {
 
 // COMBINE REDUCERS //
 export default {
+    property,
 	theme,
     view,
 };

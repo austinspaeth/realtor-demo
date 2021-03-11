@@ -14,7 +14,7 @@ type TSProps = {
 
 const Navigation:FunctionComponent<TSProps> = (props) => {
 
-    const navItems = ['buy','sell','rent','mortgage','find realtors®','my home','news & highlights'];
+    const navItems = ['buy','sell','rent','mortgage','find realtors®','my home'];
 
 	return (
 		<NavigationContainer>
