@@ -59,8 +59,6 @@ const ContactForm:FunctionComponent<TSProps> = (props) => {
 const ContactFormContainer = styled.div((props) => ({
     width:props.static ? 400 : 340,
     padding:15,
-    marginRight: props.static && 15,
-    marginLeft: props.static && 15,
     overflow:'hidden',
     background:'#fff',
     border:props.static ? 'none' : '1px solid #DEDFEA',
@@ -74,7 +72,7 @@ const ContactFormContainer = styled.div((props) => ({
         display: props.static ? 'block':'none',
     },
     '@media(max-width:600px)':{
-        width:'100%',
+        width:'calc(100% - 30px)',
         padding:0,
         overflow:'visible',
     }
