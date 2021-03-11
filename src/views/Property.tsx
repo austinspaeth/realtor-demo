@@ -8,6 +8,7 @@ import styled from 'styled-components';
 import StickHeader from '../components/property/StickyHeader';
 import ContactForm from '../components/property/ContactForm';
 import ImageExplorer from '../components/property/ImageExplorer';
+import PropertySummary from '../components/property/PropertySummary';
 
 type TSProps = {
 	theme:string
@@ -23,6 +24,7 @@ const Property:FunctionComponent<TSProps> = (props) => {
             <CenteredContent>
                 <MainContent>
                     <ImageExplorer />
+                    <PropertySummary />
                 </MainContent>
                 <ContactForm scrollPosition={scrollPosition} />
             </CenteredContent>
@@ -51,6 +53,10 @@ const CenteredContent = styled.div((props) => ({
 const MainContent = styled.div((props) => ({
     width:'calc(100% - 375px)',
     display:'flex',
+    flexDirection:'column',
+    alignItems:'flex-start',
+    justifyContent:'flex-start',
+    flexWrap:'nowrap',
 }));
 
 // REDUX MAPPING //
