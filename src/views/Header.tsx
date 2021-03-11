@@ -42,6 +42,8 @@ const HeaderContainer = styled.header((props) => ({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
+    position:'relative',
+    zIndex:1,
 }));
 const CenteredContent = styled.div((props) => ({
     width:'calc(100% - 30px)',

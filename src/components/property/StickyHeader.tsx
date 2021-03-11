@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import styled from 'styled-components';
 
 type TSProps = {
-    headerFixed:Function,
+    scrollPosition:Function,
     property:any,
 	theme:string
 }
@@ -26,9 +26,9 @@ const StickyHeader:FunctionComponent<TSProps> = (props) => {
 
     useEffect(() => {
         if(scrollPosition > 60){
-            props.headerFixed(true);
+            props.scrollPosition(scrollPosition);
         } else {
-            props.headerFixed(false);
+            props.scrollPosition(0);
         }
     }, [scrollPosition]);
 
@@ -52,6 +52,9 @@ const StickyHeader:FunctionComponent<TSProps> = (props) => {
                         <Icon xmlns="http://www.w3.org/2000/svg" viewBox="0 0 231.6 202.2"><title>Save for later</title><g id="aMZA6b.tif"><path d="M115.2,24C122,18.9,128.1,13.5,135,9.3,153.5-2,172.8-3,192.5,6.3A65.5,65.5,0,0,1,219,28.7a70.2,70.2,0,0,1,12.4,44.9c-.8,13.8-5.5,26.2-13,37.7a218.7,218.7,0,0,1-27.3,33.4c-18.9,19.5-40.1,36.3-62,52.3-4.9,3.6-10,6.1-16.1,4.8a22.9,22.9,0,0,1-8.8-3.7c-12.7-9.5-25.5-19-37.7-29.2C48.9,154.3,32.6,138.3,19,119.7,10.9,108.6,3.7,97,1.3,83.1-3.1,57.9,3.6,35.9,21.9,17.9a62.5,62.5,0,0,1,33-17A57.4,57.4,0,0,1,90.6,6a83.1,83.1,0,0,1,23.2,16.7Zm.6,35.9-5.1-7.7c-6.3-10.1-14-18.7-24.3-24.9-6.6-4-13.8-6.7-21.6-6.4-13.7.5-24.7,6.5-33.2,17.1S19.4,62.6,21.4,77c1.2,9,5.1,16.8,10,24.2,13.7,20.7,31.5,37.7,50.4,53.5,10.4,8.6,21.4,16.6,32.2,25,1.2.9,2,1.2,3.4.2,16.6-12.2,32.8-24.9,47.9-39s27.7-27.8,37.9-44.8a50.2,50.2,0,0,0,7.5-29.4c-.9-14.6-6.6-26.9-18.1-36s-23.3-12.4-37.1-8.1S132.3,36,124.2,47.2C121.3,51.2,118.7,55.4,115.8,59.9Z"/></g></Icon>
                         Save
                     </Save>
+                    <Contact scrollPosition={scrollPosition}>
+                        Contact Agent
+                    </Contact>
                 </RightContent>
             </CenteredContent>
 		</StickyHeaderContainer>
@@ -60,8 +63,8 @@ const StickyHeader:FunctionComponent<TSProps> = (props) => {
 
 // STYLED COMPONENTS //
 const StickyHeaderContainer = styled.div((props) => ({
-    position: props.scrollPosition > 60 ? 'fixed':'relative',
-    top:0,
+    position: 'fixed',
+    top:Math.max(60 - props.scrollPosition, 0),
     width:'100%',
     height:45,
     boxSizing:'border-box',
@@ -70,7 +73,7 @@ const StickyHeaderContainer = styled.div((props) => ({
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
-    transition: 'all .2s ease-in-out',
+    transition: 'background .2s ease-in-out, border .2s ease-in-out',
 }));
 const CenteredContent = styled.div((props) => ({
     display:'flex',
@@ -137,6 +140,23 @@ const Icon = styled.svg((props) => ({
     height:18,
     fill:props.theme.darkText,
     marginRight:6,
+}));
+const Contact = styled.div((props) => ({
+    fontSize:13,
+    color:'#fff',
+    background:props.theme.brand,
+    fontWeight:600,
+    display:'flex',
+    alignItems:'center',
+    justifyContent:'center',
+    marginLeft:12,
+    borderRadius:45,
+    height:32,
+    boxSizing:'border-box',
+    overflow:'hidden',
+    whiteSpace:'nowrap',
+    width: props.scrollPosition > 60 ? 115:0,
+    transition:'all .3s cubic-bezier(.24,.67,.56,.99)',
 }));
 
 // REDUX MAPPING //

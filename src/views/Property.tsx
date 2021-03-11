@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 // COMPONENTS //
 import styled from 'styled-components';
 import StickHeader from '../components/property/StickyHeader';
+import ContactForm from '../components/property/ContactForm';
+import ImageExplorer from '../components/property/ImageExplorer';
 
 type TSProps = {
 	theme:string
@@ -13,13 +15,16 @@ type TSProps = {
 
 const Property:FunctionComponent<TSProps> = (props) => {
 
-    const [headerFixed, setHeaderFixed] = useState(false);
+    const [scrollPosition, setScrollPosition] = useState(false);
 
 	return (
 		<PropertyContainer>
-            <StickHeader headerFixed={(boolean) => setHeaderFixed(boolean)} />
-            <CenteredContent headerFixed={headerFixed}>
-            Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>Test<br/>
+            <StickHeader scrollPosition={(position) => setScrollPosition(position)} />
+            <CenteredContent>
+                <MainContent>
+                    <ImageExplorer />
+                </MainContent>
+                <ContactForm scrollPosition={scrollPosition} />
             </CenteredContent>
 		</PropertyContainer>
 	)
@@ -36,8 +41,12 @@ const PropertyContainer = styled.div({
 });
 const CenteredContent = styled.div((props) => ({
     width:'calc(100% - 30px)',
+    marginTop:45,
     maxWidth:1300,
-    paddingTop: props.headerFixed ? 45:0,
+}));
+const MainContent = styled.div((props) => ({
+    width:'calc(100% - 375px)',
+    display:'flex',
 }));
 
 // REDUX MAPPING //
