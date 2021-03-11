@@ -43,6 +43,10 @@ const CenteredContent = styled.div((props) => ({
     width:'calc(100% - 30px)',
     marginTop:45,
     maxWidth:1300,
+    display:'flex',
+    justifyContent:'space-between',
+    alignItems:'flex-start',
+    position:'relative',
 }));
 const MainContent = styled.div((props) => ({
     width:'calc(100% - 375px)',

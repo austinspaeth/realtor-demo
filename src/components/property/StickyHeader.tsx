@@ -72,6 +72,7 @@ const StickyHeaderContainer = styled.div((props) => ({
     background: props.scrollPosition > 60 ? '#fff' : '#FAFBFD',
     display:'flex',
     justifyContent:'center',
+    zIndex:2,
     alignItems:'center',
     transition: 'background .2s ease-in-out, border .2s ease-in-out',
 }));

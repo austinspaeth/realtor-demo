@@ -43,7 +43,7 @@ const HeaderContainer = styled.header((props) => ({
     justifyContent:'center',
     alignItems:'center',
     position:'relative',
-    zIndex:1,
+    zIndex:3,
 }));
 const CenteredContent = styled.div((props) => ({
     width:'calc(100% - 30px)',
